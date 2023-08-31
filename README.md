@@ -70,5 +70,123 @@ For the entirety of our investigation, we implemented a train/test split of 70:3
 
 ![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/bcdcaa4b-5dfc-4ad0-8494-13f15b59cd88)
 
+**Table 3:** _Regression Models and Train/Test Accuracies_
+
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/141f5ddc-0182-46b4-860e-509200bc33ff)
+
+Upon evaluating the train accuracies for each model, we identified that Linear, Ridge,
+and Elastic Net regression were all severely overfitted. Although the Least Absolute Shrinkage and Selection Operator (LASSO) regression was also overfitting, train accuracy and test accuracy of 0.47 and 0.28, respectively, proved to be the most accurate in the given circumstances. The Least Absolute Shrinkage and Selection Operator (LASSO) regression is employed for more prediction accuracy in which shrinkage pulls data points towards the mean (Ranstam J. & Cook J. A., 2018).
+
+**Figure 3:** LASSO Regression Equation
+
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/68129580-e39a-4a2a-a247-232e41c267f9)
+Source: Dwarki (2022, July 18)
+
+Lambda (λ) is a tuning parameter that is selected prior to the Cross-validation technique.
+LASSO uses |β| to penalize the high coefficients (Dwarki, 2022). We chose to proceed with our investigation using The Least Absolute Shrinkage and Selection Operator (LASSO) regression as its computational methods account for the overfitting challenges we encountered while applying other forms of regression.
+
+# IV. Results
+
+## Descriptive Analysis Results
+
+**Figure 4:** Melanoma Cases/Rates and Ozone Concentration/Hole Area from 1979 - 1994
+
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/393da3a9-2e7a-43e6-a9dc-e70e537793ee)
+
+_Note._ The line graphs above display the trends in melanoma cases/rates and the ozone concentrations/hole area from 1979 - 1994 in New Zealand.
+
+**Figure 5:** Melanoma Cases/Rates and Ozone Concentration/Hole Area from 1996 - 2018
+
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/37eacb43-1857-43b6-9d8a-57d6aff60540)
+
+_Note._ The line graphs above display the trends in melanoma cases/rates and the ozone concentrations/hole area from 1996 - 2018 in New Zealand.
 
 
+As seen, there is an apparent increase in both the cases and rate of melanoma along with a decrease in ozone concentrations due to the ozone hole opening from 1979 - 1994. As such, these trends convey how ozone depletion tends to cause an increase in melanoma rates, as observed in these line graphs. However, from 1996 - 2018, there did not seem to be a trend similar to the one before, which led us to suspect that there were potential inaccuracies within the data. This is important because it confirms the results discussed in past research findings in the literature review section and raises further questions about possible external factors that may influence the continued trend of cancer cases.
+
+
+**Figure 6:** Correlation of Variables from 1979 - 1994
+
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/9425d41e-9ed7-4076-87c9-471415a4356d)
+
+_Note._ The scatter plots above display the relationship between the 4 different variables in the dataset from 1979 - 1994 in New Zealand.
+
+**Figure 7:** Correlation of Variables from 1996 - 2018
+
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/03510635-a51d-43f8-afc1-44f20310231f)
+
+_Note._ The scatter plots above display the relationship between the 4 different variables in the dataset from 1996 - 2018 in New Zealand.
+
+As shown in Figure 6, the positive correlation between the cases of melanoma/rate of melanoma per 100k and the size of the ozone hole in 1979-1994 is relatively strong – with Pearson correlation coefficients of 0.76 for melanoma cases v. size of the ozone hole and 0.67 for rate per 100k v. size of the ozone hole. This indicates that the growing size of the Ozone hole is correlated with the increased amount of melanoma cases in New Zealand. Moreover, Figure 6 shows a strong negative correlation between the concentration of ozone in the stratosphere and the cases of melanoma/rate of melanoma per 100k in 1979-1994 –– with Pearson correlation coefficients of -0.77 for melanoma cases v. ozone concentration and -0.68 for rate per 100k v. ozone concentration. Furthermore, the p-values of all the correlation models from 1979-1995 is <0.05, which indicates that the correlation is statistically significant. However, for 1996 - 2018, there is little correlation between the variables as the Pearson correlation coefficients are significantly lower than the graphs showcased in Figure 6; additionally, the p-values are significantly more significant than those of the graphs displayed in Figure 6. This confirms our second research question as the weak correlation indicates that external factors have a more substantial influence on melanoma cases than the ozone concentration in the stratosphere. As a result, we conducted additional research (Reference - “The Uses of Sunbeds in New Zealand” section) regarding possible external factors that may cause the increase in melanoma cases in New Zealand despite the ozone hole's recovery.
+
+
+## Predictive Analysis Results
+
+The results of our predictive analysis were underwhelming as the train/test accuracies were low. Although we achieved the highest regression score using the Least Absolute Shrinkage and Selection Operator (LASSO) regression, the train and test accuracies were 0.47 and 0.28, respectively (Refer to table 1), which are relatively low scores. We suspect that the low accuracies were due to two possible factors: external factors affecting the rate/cases of melanoma and the size of our dataset. As a result, we concluded that our dataset is not viable for predictive analysis as it contains too few observations and attributes – 39 and 4, respectively. However, future studies can further explore the novel approach of utilizing predictive modeling in investigating the relationship between ozone concentration.
+
+# Discussion & Conclusion
+In the 1979 - 1994 dataset, we identified a strong negative correlation between the rates of melanoma and the ozone concentration. Predictably, we identified a strong positive correlation between the rates of melanoma and the ozone hole size. We deemed these findings coherent as ozone is proven to absorb a significant amount of UVB radiation, which is the leading factor causing melanoma (discussed in our literature review). However, in the 1996 - 2018 dataset, we did not see a similar trend as the Pearson correlation coefficients in our correlation analysis were relatively low with an insufficient p-value. This prompted the suspicion of external factors that may have influenced the rate of melanoma as well as the insufficiency of our dataset.
+Regarding our predictive analysis, we achieved the highest regression score using LASSO regression. However, the LASSO regression scores that we received were still relatively low. Therefore, we concluded that our dataset is not viable for predictive analysis as it contains few observations.
+Based on these results, we also looked into future implications of this research, including the application of radioisotopes in the medical field regarding the utilization of radiation therapy used to treat cancer. Thus, we will not only grasp a better understanding of the relationship between ozone concentration and melanoma but also come up with solutions to treat it. This occurs through the discussion of implementing the Solution Cathode Glow Discharge (SCGD) in our research. Both of these applications will be further discussed in the Future Implications section.
+
+## The Uses of Sunbeds in New Zealand
+Considering possible factors that may have provoked the persistent increase in melanoma rates in New Zealand, we identified the increased use of sunbeds among individuals in New Zealand. According to Køster et al. (2009), the artificial light from sunbeds emits UV radiation, which poses a high risk for melanoma development in younger adults aged 15 - 59. 35% of Danish individuals reported in 1994 that they had used sunbeds in the past two years, along with an increase to 50% in 2004 (Køster et al., 2009). However, efforts to reduce sunbed usage through public health campaigns have taken place recently (Olsen et al., 2019). Hence, these efforts have led to the imposition of sunbed regulations on January 4th, 2017. These regulations made it illegal for individuals under the age of 18 to use a sunbed in New Zealand, according to the Ministry of Health (2022, January 31).
+Based on the increase in sunbed usage in New Zealand, we anticipate sunbed usage likely influenced the rising rates of melanoma. However, we could not obtain any datasets regarding the use of sunbeds in New Zealand from 1996 - 2018; yet, the information presented in the articles we reviewed allowed us to capture the essence of possible external factors that caused the rise of melanoma rates.
+
+## Limitations of the Study
+The inability to collect enough data regarding ozone in the stratosphere and skin cancer significantly limited the depth of study in our research. We could not access information regarding ozone data before 1979 as detailed assessments of the ozone layer were not conducted and/or documented by the National Aeronautics and Space Administration (NASA). The lack of abundant quantities of both observations and attributes resulted in weak predictive modeling and
+22
+correlation graphs. Moreover, the lack of tuning in our predictive models may have affected the accuracy of our regression scores.
+
+## Future Implications
+The future implications of this research are looking into more datasets to make our predictive model more accurate. Our LASSO regression method did not run well because of such a small dataset. By doing additional research, we hope to come across datasets that provide more information about the future state of ozone concentrations. This will ultimately allow for more robust predictive accuracy so that we can predict future rates of melanoma.
+Furthermore, the future implications also involve exploring and applying radioisotopes in the medical field to treat cancerous cells. Moreover, radioisotopes are especially helpful in the medical field, mainly being used in radiation therapy as a way to slow down the growth or completely eradicate potentially dangerous skin cancer cells (Zhao et al., 2016; Zhang et al., 2010). Radioisotopes emit these forms of radiation in particles; hence, they can be used to treat cancerous skin cells (Zhang et al., 2010). For example, according to Zhang et al. (2010), some of these radioisotopes that are commonly implemented in the treatment of cancer are iodine - 131(131I), yttrium-90 (90Y), copper-67 (67Cu), rhenium-186 (186Re), lutetium-177 (177Lu), and copper-64 (64Cu).
+
+**Figure 8:** Graphic on the Use of Radioisotopes in Treatment of Cancerous Cells
+
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/06893c13-9707-43cc-9585-59ff5081b4ae)
+
+Source: Zhang et al. (2010)
+
+The way these radioisotopes can be discovered is by the implementation of the Solution Cathode Glow Discharge (SCGD). The SCGD is a device that utilizes mass spectrometry analysis to detect molecular emissions from various solutions with the end goal of being able to detect radioisotopes by optimization (Doroski et al., 2013). Mass spectrometry analysis is where the mass-to-charge ratio is measured for one or more particles and applied to measuring isotope ratios such as carbon and nitrogen (Brand, 1996). Optimization has been performed in past research on the SCGD to maximize molecular emissions present in solutions. However, work is still being done so that the SCGD can detect these isotope ratios discussed. Once the SCGD can detect these forms of isotopes, they can be applied in future works regarding radiation therapy as a solution for treating melanoma.
+
+**Figure 9:** Graphic on Solution Cathode Glow Discharge Functions
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/29e6fd71-f857-4167-9836-e38722bda11b)
+
+Source: Doroski et al. (2013)
+
+Evidently, these implications to our research from our results will be topics that will need to be further explored in the future.
+
+## Concluding Remarks
+In retrospect, we deemed that we have gained a more robust interpretation of both melanoma and the ozone layer. We found appropriate answers to our research questions during this project through data analysis with Pandas and predictive modeling using machine learning.
+Although we did not obtain the highest regression score through our predictive analysis, we decided to look more in-depth into any possible outside factors that may have influenced our data. A significant finding from our research is that there are external factors to consider when looking at the cases of melanoma, as it does not always directly correlate with ozone concentration. Thus, we will need to take into account key behavior and habitual factors, stated in the Ethical Considerations section, that may influence melanoma so that we are providing the most accurate conclusions to the public.
+
+# References
+Armstrong, B. K., & Kricker, A. (1995). Skin cancer. Dermatologic Clinics, 13(3), 583–594. https://doi.org/10.1016/s0733-8635(18)30064-0
+Barnes, P.W., Williamson, C.E., Lucas, R.M. et al. (2019). Ozone depletion, ultraviolet radiation, climate change and prospects for a sustainable future. Nature Sustainability 2, 569–579. https://doi.org/10.1038/s41893-019-0314-2
+Brand, W. A. (1996). High precision isotope ratio monitoring techniques in mass spectrometry. Journal of Mass Spectrometry, 31(3), 225–235. https://doi.org/10.1002/(sici)1096-9888(199603)31:3
+Decker, C. G., & Webb, M. R. (2016). Measurement of sample and plasma properties in solution-cathode glow discharge and effects of organic additives on these properties. Journal of Analytical Atomic Spectrometry, 31(1), 311–318. https://doi.org/10.1039/c5ja00243e
+Diepgen, T. L., & Mahler, V. (2002). The epidemiology of skin cancer. British Journal of Dermatology, 146(s61), 1–6. https://doi.org/10.1046/j.1365-2133.146.s61.2.x
+D'Orazio, J., Jarrett, S., Amaro-Ortiz, A., & Scott, T. (2013). UV radiation and the skin. International Journal of Molecular Sciences, 14(6), 12222–12248. https://doi.org/10.3390/ijms140612222
+Doroski, T. A., King, A. M., Fritz, M. P., & Webb, M. R. (2013). Solution–cathode glow discharge – optical emission spectrometry of a new design and using a Compact Spectrograph. Journal of Analytical Atomic Spectrometry, 28(7), 1090–1095. https://doi.org/10.1039/c3ja50092f
+Dupont, E., Gomez, J., & Bilodeau, D. (2013). Beyond UV radiation: A skin under challenge. International Journal of Cosmetic Science, 35(3), 224–232. https://doi.org/10.1111/ics.12036
+Dwarki, V. (2022, July 18). Ridge Regression vs Lasso Regression. Naukri Learning. Retrieved July 26, 2022, from
+https://www.naukri.com/learning/articles/ridge-regression-vs-lasso-regression/
+Hussein, M. R. (2005). Ultraviolet radiation and skin cancer: Molecular mechanisms. Journal of Cutaneous Pathology, 32(3), 191–205. https://doi.org/10.1111/j.0303-6987.2005.00281.x
+Jones, W. O., Harman, C. R., Ng, A. K. T., & Shaw, J. H. F. (1999). Incidence of malignant melanoma in Auckland, New Zealand: Highest rates in the world. World Journal of Surgery, 23(7), 732–735. https://doi.org/10.1007/pl00012378
+Køster, B., Thorgaard, C., Clemmensen, I. H., & Philip, A. (2009). Sunbed use in the Danish population in 2007: A cross-sectional study. Preventive Medicine, 48(3), 288–290. https://doi.org/10.1016/j.ypmed.2008.12.012
+Miller, A. J., & Mihm, M. C. (2006). Melanoma. New England Journal of Medicine, 355(1), 51–65. https://doi.org/10.1056/nejmra052166
+MOH, (2021). Cancer: Historical summary 1948–2018. Ministry of Health NZ. . Retrieved July 23, 2022, from
+https://www.health.govt.nz/publication/cancer-historical-summary-1948-2018
+Newman, P. (2018). NASA Ozone Watch: Latest Status of Ozone. NASA. Retrieved July 23, 2022, from https://ozonewatch.gsfc.nasa.gov/statistics/annual_data.
+Olsen, C. M., Green, A. C., Pandeya, N., & Whiteman, D. C. (2019). Trends in melanoma incidence rates in eight susceptible populations through 2015. Journal of Investigative Dermatology, 139(6), 1392–1395. https://doi.org/10.1016/j.jid.2018.12.006
+Ranstam, J., & Cook, J. A. (2018). Lasso regression. British Journal of Surgery, 105(10), 1348–1348. https://doi.org/10.1002/bjs.10895
+Saladi, R. N., & Persaud, A. N. (2005). The causes of Skin cancer: A comprehensive review. Drugs of Today, 41(1), 37. https://doi.org/10.1358/dot.2005.41.1.875777
+Sneyd, M. J., & Cox, B. (2013). A comparison of trends in melanoma mortality in New Zealand and Australia: The two countries with the highest melanoma incidence and mortality in the world. BMC Cancer, 13(1). https://doi.org/10.1186/1471-2407-13-372
+Solomon, S., Mills, M., Heidt, L. E., Pollock, W. H., & Tuck, A. F. (1992). On the evaluation of ozone depletion potentials. Journal of Geophysical Research, 97(D1), 825–842. https://doi.org/10.1029/91jd02613
+Sunbeds. Ministry of Health NZ. (2022, January 31). Retrieved July 27, 2022, from https://www.health.govt.nz/your-health/healthy-living/environmental-health/sunbeds#:~:t ext=From%204%20January%202017%2C%20it,a%20current%20passport
+Taalas, P., Damski, J., Kyrö, E., Ginzburg, M., & Talamoni, G. (1997). Effect of stratospheric ozone variations on UV radiation and on tropospheric ozone at high latitudes. Journal of Geophysical Research: Atmospheres, 102(D1), 1533–1539. https://doi.org/10.1029/96jd02310
+United States Environmental Protection Agency. (2021, October 7). Basic Ozone Layer Science. EPA. Retrieved July 26, 2022, from https://www.epa.gov/ozone-layer-protection/frequently-asked-questions-about-ozone-lay er#:~:text=The%20ozone%20layer%20lies%20approximately,Earth's%20surface%2C%2 0in%20the%20stratosphere.
+Urbach, F. (1980). Ultraviolet radiation and skin cancer in man. Preventive Medicine, 9(2), 227–230. https://doi.org/10.1016/0091-7435(80)90080-8
+Zhang, L., Chen, H., Wang, L., Liu, T., Yeh, J., Lu, G., Wang, L., & Mao, H. (2010). Delivery of therapeutic radioisotopes using nanoparticle platforms: Potential Benefit in Systemic Radiation therapy. Nanotechnology, Science and Applications, (3), 159–170. https://doi.org/10.2147/nsa.s7462
+Zhao, J., Zhou, M. & Li, C. Synthetic nanoparticles for delivery of radioisotopes and radiosensitizers in cancer therapy. Cancer Nano 7, 9 (2016). https://doi.org/10.1186/s12645-016-0022-9
