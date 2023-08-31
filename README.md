@@ -45,11 +45,15 @@ Data analysis and cleaning were done using the Pandas library. All data processi
 The Pandas package from Python was used in the data-cleaning process of our research. We dropped unnecessary columns for our analysis as the New Zealand Cancer Registry dataset included rates from various cancer types. Our data processing allowed us to efficiently analyze our dataset thereafter.
 
 **Table 1:** Table of Variables with Values from 1979 - 1994
+
 <img width="537" alt="image" src="https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/ca9059d4-45f1-41d2-b786-86cdace4eb89">
+
 _Note._ The table above displays the data from 1979 - 1994 after cleaning the datasets with the Pandas drop method.
 
 **Table 2:** Table of Variables with Values from 1996 - 2018
+
 <img width="487" alt="image" src="https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/6e0c88b4-77e8-441b-a6cf-099a250d305a">
+
 _Note._ The table above displays the data from 1996 - 2018 after cleaning the datasets with the Pandas drop method.
 
 As seen, the tables that were dropped with the Pandas drop method removed all of the unnecessary columns in the original dataset for the New Zealand Cancer Registry and allowed us to focus solely on the rates of melanoma.
