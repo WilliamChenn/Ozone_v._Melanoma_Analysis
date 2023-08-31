@@ -68,6 +68,7 @@ For the entirety of our investigation, we implemented a train/test split of 70:3
 
 **Figure 2:** _Train_test_split_
 
-<img width="529" alt="image" src="https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/c4c8bd61-b9e0-4919-b1a9-7f881e0da9eb">
+![image](https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/bcdcaa4b-5dfc-4ad0-8494-13f15b59cd88)
+
 
 
