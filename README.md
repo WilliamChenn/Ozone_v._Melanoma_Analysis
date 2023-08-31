@@ -57,3 +57,17 @@ _Note._ The table above displays the data from 1979 - 1994 after cleaning the da
 _Note._ The table above displays the data from 1996 - 2018 after cleaning the datasets with the Pandas drop method.
 
 As seen, the tables that were dropped with the Pandas drop method removed all of the unnecessary columns in the original dataset for the New Zealand Cancer Registry and allowed us to focus solely on the rates of melanoma.
+
+## Predictive Analysis Methods
+Our process of identifying a particular predictive model is influenced by the datatypes of our target and predictive attributes. Since our dataset consists of numeric values and our research aims to predict quantifiable cases/rates of melanoma, we utilized regression models in our predictive analysis. We initially considered the following regression models for our research:
+  ● Least Absolute Shrinkage and Selection Operator (LASSO)
+  ● Linear Regression 
+  ● Ridge
+  ● ElasticNet
+For the entirety of our investigation, we implemented a train/test split of 70:30, respectively since our dataset contains a relatively small quantity of observations. Furthermore, after the trial of 90:10 and 80:20 splits, which are also conventional train/test splits alongside 70:30, we achieved weaker model scores compared to 70:30 (See Figure 2).
+
+**Figure 2:** _Train_test_split_
+
+<img width="529" alt="image" src="https://github.com/WilliamChenn/Ozone_v._Melanoma_Analysis/assets/85557718/c4c8bd61-b9e0-4919-b1a9-7f881e0da9eb">
+
+
